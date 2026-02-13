@@ -61,6 +61,11 @@ public class CityList {
         cities.remove(city);
     }
 
+    /**
+     * This method checks th amount of items in the list
+     * @return
+     * returns the count of items in the list
+     */
     public int count() {
         return cities.size();
     }
