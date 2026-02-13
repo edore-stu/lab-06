@@ -1,8 +1,10 @@
 package com.example.listycity;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * This is a class that keeps a list of city objects
@@ -31,6 +33,36 @@ public class CityList {
         List<City> list = cities;
         Collections.sort(list);
         return list;
+    }
+
+    /**
+     * Checks if the citylist has the specified item
+     * @param city
+     * @return
+     * Returns boolean based on truth value
+     */
+    public boolean hasCity(City city){
+        for (int i = 0; i < cities.size(); i++){
+            if (cities.get(i) == city){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * This method removes a city from the list
+     * @param city
+     */
+    public void delete(City city){
+        if (!cities.contains(city)){
+            throw new IllegalArgumentException();
+        }
+        cities.remove(city);
+    }
+
+    public int count() {
+        return cities.size();
     }
 
 }
